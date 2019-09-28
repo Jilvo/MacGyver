@@ -43,12 +43,17 @@ class labyrinth():
             for x,color in enumerate(lst):
                 if color == "m":
                     print("MacGyver is in ",x,"list at the", y,"position")
+                    global list_macgyver
+                    list_macgyver=[]
+                    list_macgyver.append(x)
+                    list_macgyver.append(y)
         
 #find the bad guy
         for y,lst in enumerate(structure_labyrinth):
             for x,color in enumerate(lst):
                 if color == "b":
                     print("The bad guy is in ",x,"list at the", y,"position")
+                    
 
     def set_the_object(self):
         structure_labyrinth[randint(1,14)][randint(1,14)]="e"
@@ -88,36 +93,48 @@ class labyrinth():
             # print(*indexes, sep="\n")
             # fichier.close()
 
-# class perso():
-    
-#     def init(self):
-# 	    self.x=0
-# 	    self.y=0
+#class perso():
 
-#     def deplacer(self,direction,x,y):
-#         if direction == 'right':
-#             self.x += 1
-#             print("right")
-#             print(self.x,self.y)
-#         if direction == 'left':
-#             self.x -= 1
-#             print("left")
-#             print(self.x,self.y)
-#         if direction == 'up':
-#             self.y -= 1
-#             print("up")
-#             print(self.x,self.y)
-#         if direction == 'down':
-#             self.y += 1
-#             print("down")
-#             print(self.x,self.y)
+    def deplacer(self,direction):
+        x=list_macgyver[0]
+        y=list_macgyver[1]
+        print(list_macgyver)
+        if direction == 'right':
+            structure_labyrinth[x][y]="0"
+            list_macgyver[0] += 1
+            x+=1
+            structure_labyrinth[x][y]="m"
+            print("right")
+        if direction == 'left':
+            structure_labyrinth[x][y]="0"
+            list_macgyver[0] -= 1
+            x-=1
+            structure_labyrinth[x][y]="m"
+            print("left")
+        if direction == 'up':
+            structure_labyrinth[x][y]="0"
+            list_macgyver[1] -= 1
+            y-=1
+            structure_labyrinth[x][y]="m"
+            print("up")
+        if direction == 'down':
+            structure_labyrinth[x][y]="0"
+            list_macgyver[1] += 1
+            y+=1
+            structure_labyrinth[x][y]="m"
+            print("down")
+            
+        print(list_macgyver)
+        print(structure_labyrinth)
+   # def replace_value(self,list_macgyver):
 
 
 game=labyrinth('labyrinth.txt')
 game.generate()
 game.find_player()
 game.set_the_object()
-#direction = input("chose direction : ")
+direction = input("chose direction : ")
+game.deplacer(direction)
 # deplacement=perso()
 # deplacement.init()
 # deplacement.deplacer(direction)
