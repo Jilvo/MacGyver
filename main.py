@@ -2,6 +2,7 @@
 #Import the labyrinth's file
 balise_player=0
 balise_bad_guy=0
+score=0
 from random import *
 #print("MacGyver est situé",labyrinth.index('*'));
 #for i in range(0,16):
@@ -42,47 +43,51 @@ class labyrinth():
         for y,lst in enumerate(structure_labyrinth):
             for x,color in enumerate(lst):
                 if color == "m":
-                    print("MacGyver is in ",x,"list at the", y,"position")
+                    print("MacGyver is in ",y,"list at the", x,"position")
                     global list_macgyver
                     list_macgyver=[]
-                    list_macgyver.append(x)
                     list_macgyver.append(y)
+                    list_macgyver.append(x)
         
 #find the bad guy
         for y,lst in enumerate(structure_labyrinth):
             for x,color in enumerate(lst):
                 if color == "b":
-                    print("The bad guy is in ",x,"list at the", y,"position")
+                    print("The bad guy is in ",y,"list at the", x,"position")
                     
 
     def set_the_object(self):
         structure_labyrinth[randint(1,14)][randint(1,14)]="e"
         structure_labyrinth[randint(1,14)][randint(1,14)]="n"
         structure_labyrinth[randint(1,14)][randint(1,14)]="t"
-        
+        global list_object
+        list_object=[]
         print(structure_labyrinth)
 
         for y,lst in enumerate(structure_labyrinth):
             for x,color in enumerate(lst):
                 if color == "e":
-                    print("the ether is in ",x,"list at the", y,"position")
+                    print("the ether is in ",y,"list at the", x,"position")
                     list_ether=[]
-                    list_ether.append(x)
                     list_ether.append(y)
+                    list_ether.append(x)
+                    list_object.append(list_ether)
         for y,lst in enumerate(structure_labyrinth):
             for x,color in enumerate(lst):
                 if color == "n":
-                    print("the needle is in ",x,"list at the", y,"position")
+                    print("the needle is in ",y,"list at the", x,"position")
                     list_needle=[]
-                    list_needle.append(x)
                     list_needle.append(y)
+                    list_needle.append(x)
+                    list_object.append(list_needle)
         for y,lst in enumerate(structure_labyrinth):
             for x,color in enumerate(lst):
                 if color == "t":
-                    print("the tube is in ",x,"list at the", y,"position")
+                    print("the tube is in ",y,"list at the", x,"position")
                     list_tube=[]
-                    list_tube.append(x)
                     list_tube.append(y)
+                    list_tube.append(x)
+                    list_object.append(list_tube)
         if list_tube == list_needle or list_tube== list_ether:
             structure_labyrinth[randint(1,14)][randint(1,14)]="t"
         elif list_needle == list_ether :
@@ -92,6 +97,7 @@ class labyrinth():
             # indexes = [(i, j) for i, nl in enumerate(structure_labyrinth) for j, nle in enumerate(nl)]
             # print(*indexes, sep="\n")
             # fichier.close()
+        
 
 #class perso():
 
@@ -100,41 +106,54 @@ class labyrinth():
         y=list_macgyver[1]
         print(list_macgyver)
         if direction == 'right':
-            structure_labyrinth[x][y]="0"
+            structure_labyrinth[y][x]="0"
             list_macgyver[0] += 1
             x+=1
-            structure_labyrinth[x][y]="m"
+            structure_labyrinth[y][x]="m"
             print("right")
         if direction == 'left':
-            structure_labyrinth[x][y]="0"
+            structure_labyrinth[y][x]="0"
             list_macgyver[0] -= 1
             x-=1
-            structure_labyrinth[x][y]="m"
+            print(x)
+            structure_labyrinth[y][x]="m"
             print("left")
         if direction == 'up':
-            structure_labyrinth[x][y]="0"
+            structure_labyrinth[y][x]="0"
             list_macgyver[1] -= 1
             y-=1
-            structure_labyrinth[x][y]="m"
+            structure_labyrinth[y][x]="m"
             print("up")
         if direction == 'down':
-            structure_labyrinth[x][y]="0"
+            structure_labyrinth[y][x]="0"
             list_macgyver[1] += 1
             y+=1
-            structure_labyrinth[x][y]="m"
+            structure_labyrinth[y][x]="m"
             print("down")
+        
             
-        print(list_macgyver)
+        print(x,y)
         print(structure_labyrinth)
    # def replace_value(self,list_macgyver):
+    def scoring(self,list_macgyver,list_object):
+        print(list_macgyver)
+        print(list_object)
+        for i in list_object:
+            for j in i:
+                if list_macgyver == list_object[2]:
+                    score+=1
+                    print("Le score est passé a : ",score)
+    
 
 
+print("Le Score est de :",score)
 game=labyrinth('labyrinth.txt')
 game.generate()
 game.find_player()
 game.set_the_object()
 direction = input("chose direction : ")
 game.deplacer(direction)
+game.scoring(list_macgyver,list_object)
 # deplacement=perso()
 # deplacement.init()
 # deplacement.deplacer(direction)
