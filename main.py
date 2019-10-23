@@ -5,15 +5,8 @@ balise_bad_guy=0
 import pygame
 from random import randint
 from constantes import *
-#print("MacGyver est situé",labyrinth.index('*'));
-#for i in range(0,16):
- #   if "m" in labyrinth[i][balise_player]:
-  #      print("MacGyver is in the list",i,"at the position",labyrinth[i].index("m"));
-   #     break
-    #else:
-     #   #print("searching...");
-      #  pass
-    #balise_player=0
+from score import *
+
 class labyrinth():
 #create a class for the labyrinth  
     def __init__(self, fichier):
@@ -148,23 +141,6 @@ class labyrinth():
         #     # print(*indexes, sep="\n")
         #     # fichier.close()
         # print(list_object)
-        
-
-class Score():
-    def __init__(self):
-        self.score= 0
-
-   # def replace_value(self,list_macgyver):
-    # def scoring(self):
-    #     return score
-    def win(self):
-        print("you win")
-        screen = pygame.image.load("MacGyver/ressources/win.png")
-
-    def lose(self):
-        print("you lose")
-        screen = pygame.image.load("MacGyver/ressources/lose.jpg")
-        
 
 class Perso(Score):
     def __init__(self,pos_x,pos_y,structure_lab):

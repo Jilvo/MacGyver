@@ -1,6 +1,7 @@
-#V 0.7 pygame
+#V 0.8 pygame
 #import modules
 import pygame
+
 from pygame.locals import *
 from constantes import *
 from main import *
@@ -77,6 +78,7 @@ def score_board():
 	text="Le score actuel est : " + str(macgyver_perso.score)
 	score_display = myfont.render(text, 1, (255, 163, 172))
 	screen.blit(score_display, (0,0))
+
 # def score_board(score,ether,needle,tube)
 # 	if score==0
 
@@ -85,8 +87,11 @@ def score_board():
 continuer = 1
 display(game.structure)
 while continuer:
-	for event in pygame.event.get():	#Attente des événements
-		
+	# if score_img==True:
+	# 	screen.blit(win_img,(0,0))
+	# elif score_img==False:
+	# 	screen.blit(lose_img,(0,0))
+	for event in pygame.event.get():	#Attente des événements	
 		if event.type == QUIT:
 			continuer = 0
 		if event.type == KEYDOWN:
