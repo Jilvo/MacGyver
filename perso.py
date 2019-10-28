@@ -1,18 +1,18 @@
-from loading import *
-
+from maze_charging import *
 class Perso():
-    def __init__(self,pos_x,pos_y,structure_lab):
+    def __init__(self,pos_x,pos_y,structure_lab,list_macgyver):
         self.position_perso = (pos_x,pos_y)
         self.pos_x = pos_x
         self.pos_y = pos_y
         self.labyrinth = structure_lab 
         self.score = 0
+        self.list_macgyver = list_macgyver
 
     def deplacer(self,direction):
-        # x=list_macgyver[0]
-        # y=list_macgyver[1]
-        # case_x=0
-        # case_y=0
+        x=list_macgyver[0]
+        y=list_macgyver[1]
+        case_x=0
+        case_y=0
         # print(list_macgyver)
         if direction == 'right':
             print(self.labyrinth[y][x+1])
