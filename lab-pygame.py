@@ -1,7 +1,6 @@
-#V 0.8 pygame
+#V 0.1 pygame
 #import modules
 import pygame
-
 from pygame.locals import *
 from constantes import *
 from main import *
@@ -19,8 +18,8 @@ wall = pygame.image.load(image_wall).convert_alpha()
 macgyver_img = pygame.image.load(image_macgyver).convert_alpha()
 badguy = pygame.image.load(image_badguy).convert_alpha()
 floor = pygame.image.load(image_floor).convert_alpha()
-win_img = pygame.image.load(image_win).convert_alpha
-lose_img = pygame.image.load(image_lose).convert_alpha
+win_img = pygame.image.load(image_win).convert_alpha()
+lose_img = pygame.image.load(image_lose).convert_alpha()
 
 # wall= pygame.image.load(image_wall).convert_alpha
 def display(structure_labyrinth):
@@ -74,10 +73,10 @@ def display(structure_labyrinth):
 
 #set the scoreboard:
 def score_board():
-	
 	myfont = pygame.font.SysFont("comicsansms", 30)
-	text = "Le score actuel est : " + str(macgyver_perso.score)
+	text = "Le score actuel est : " + str(macgyver_perso.score.value)
 	score_display = myfont.render(text, 1, (255, 163, 172))
+	screen.blit(wall,(280,0))
 	screen.blit(score_display, (0,0))
 	pygame.display.flip()
 
@@ -94,40 +93,50 @@ while continuer:
 		if event.type == KEYDOWN:
 			if event.key == K_DOWN:	#if "down arrow"
 				old_position = (macgyver_perso.pos_x*taille_sprite,macgyver_perso.pos_y*taille_sprite)
-				macgyver_perso.deplacer('down')
+				as_picked_an_item = macgyver_perso.deplacer('down')
 				screen.blit(floor,old_position)
 				position_perso = (macgyver_perso.pos_x*taille_sprite,macgyver_perso.pos_y*taille_sprite)
 				screen.blit(macgyver_img, position_perso)
 				pygame.display.flip()
-				score_board()	
+				if as_picked_an_item : 
+					score_board()
 		if event.type == KEYDOWN:
 			if event.key == K_UP:	#if "up arrow"
 				old_position = (macgyver_perso.pos_x*taille_sprite,macgyver_perso.pos_y*taille_sprite)
-				macgyver_perso.deplacer('up')
+				as_picked_an_item = macgyver_perso.deplacer('up')
 				screen.blit(floor,old_position)
 				position_perso = (macgyver_perso.pos_x*taille_sprite,macgyver_perso.pos_y*taille_sprite)
 				screen.blit(macgyver_img, position_perso)
 				pygame.display.flip()
-				score_board()
+				if as_picked_an_item : 
+					score_board()
 		if event.type == KEYDOWN:
 			if event.key == K_RIGHT:	#if "right arrow"
 				old_position = (macgyver_perso.pos_x*taille_sprite,macgyver_perso.pos_y*taille_sprite)
-				macgyver_perso.deplacer('right')
+				as_picked_an_item = macgyver_perso.deplacer('right')
 				screen.blit(floor,old_position)
 				position_perso = (macgyver_perso.pos_x*taille_sprite,macgyver_perso.pos_y*taille_sprite)
 				screen.blit(macgyver_img, position_perso)
 				pygame.display.flip()
-				score_board()
+				if as_picked_an_item : 
+					score_board()
 		if event.type == KEYDOWN:
 			if event.key == K_LEFT:	#if "left arrow"
 				old_position = (macgyver_perso.pos_x*taille_sprite,macgyver_perso.pos_y*taille_sprite)
-				macgyver_perso.deplacer('left')
+				as_picked_an_item = macgyver_perso.deplacer('left')
 				screen.blit(floor,old_position)
 				position_perso = (macgyver_perso.pos_x*taille_sprite,macgyver_perso.pos_y*taille_sprite)
 				screen.blit(macgyver_img, position_perso)
 				pygame.display.flip()
-				score_board()
+				if as_picked_an_item : 
+					score_board()
 		pygame.display.flip()
+		if macgyver_perso.score.is_finished and macgyver_perso.score.is_win :
+			screen.blit(win_img,(0,0))
+		elif macgyver_perso.score.is_finished and not macgyver_perso.score.is_win:
+			screen.blit(lose_img,(0,0))
+
+
 		
 	# print(pos_x,pos_y)
 	# screen.blit(macgyver_img, position_perso)

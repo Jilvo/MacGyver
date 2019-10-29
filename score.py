@@ -6,12 +6,22 @@ import sys
 class Score():
     # init the class
     def __init__(self):
-        self.score = 0
+        self.value = 0
+        self.is_finished = False
+        self.is_win = False
     # if we win
     def win(self):
         print("you win")
-        sys.exit(0)
+        self.is_finished = True
+        self.is_win = True
+        # sys.exit(0)
     # if we lose
     def lose(self):
         print("you lose")
-        sys.exit(0)
+        self.is_finished = True
+        # sys.exit(0)
+    def increm_value(self,val=1):
+        self.value= self.value + val
+
+
+
