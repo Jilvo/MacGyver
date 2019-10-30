@@ -1,16 +1,15 @@
-"""Constantes for Macgyver"""
+"""V1.0--This Module set the constants """
+#set the window
+number_sprite_cote = 15
+size_sprite = 40
+cote_screen = number_sprite_cote * size_sprite
 
-#Paramètres de la fenêtre
-nombre_sprite_cote = 15
-taille_sprite = 40
-cote_screen = nombre_sprite_cote * taille_sprite
-
-#Personnalisation de la fenêtre
-titre_screen = "Macgyver Projet 3"
-image_icone = "MacGyver/ressources/macgyver.png"
+#personalize the window
+title_screen = "Macgyver Projet 3"
+image_icon = "MacGyver/ressources/old/macgyver.png"
 
 
-#Listes des images du jeu
+#List of the pic
 image_background = "MacGyver/ressources/background.png"
 image_badguy = "MacGyver/ressources/guardian.png"
 image_ether= "MacGyver/ressources/ether.png"

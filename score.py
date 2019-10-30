@@ -1,8 +1,5 @@
-"""This Module is in charge of leaving the game after the win or the lose of Macgyver"""
+"""V1.0--This Module is in charge of changing the score and if Macgyver hit the guard,set the win or the lose """
 
-# import modules
-import sys
-# the class is call when Macgyver hit the guard
 class Score():
     # init the class
     def __init__(self):
@@ -14,12 +11,10 @@ class Score():
         print("you win")
         self.is_finished = True
         self.is_win = True
-        # sys.exit(0)
     # if we lose
     def lose(self):
         print("you lose")
         self.is_finished = True
-        # sys.exit(0)
     def increm_value(self,val=1):
         self.value= self.value + val
 

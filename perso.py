@@ -1,5 +1,6 @@
 from maze_charging import *
 from score import *
+"""V1.0--This Module is in charge of moving MacGyver and tell if we pick an object """
 class Perso():
     def __init__(self,pos_x,pos_y,structure_lab,list_macgyver):
         self.position_perso = (pos_x,pos_y)
@@ -10,11 +11,9 @@ class Perso():
         self.list_macgyver = list_macgyver
 
 
-    def deplacer(self,direction):
+    def move_macgyver(self,direction):
         x=self.list_macgyver[0]
         y=self.list_macgyver[1]
-        case_x=0
-        case_y=0
         as_picked_an_item = False
         # print(list_macgyver)
         if direction == 'right':
