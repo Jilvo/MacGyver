@@ -1,22 +1,22 @@
 """V1.0--This Module set the constants """
 #set the window
-number_sprite_cote = 15
-size_sprite = 40
-cote_screen = number_sprite_cote * size_sprite
+NUMBER_SPRITE_COTE = 15
+SIZE_SPRITE = 40
+COTE_SCREEN = NUMBER_SPRITE_COTE * SIZE_SPRITE
 
 #personalize the window
-title_screen = "Macgyver Projet 3"
-image_icon = "MacGyver/ressources/old/macgyver.png"
+TITLE_SCREEN = "Macgyver Projet 3"
+IMAGE_ICON = "ressources/old/macgyver.png"
 
 
 #List of the pic
-image_background = "MacGyver/ressources/background.png"
-image_badguy = "MacGyver/ressources/guardian.png"
-image_ether= "MacGyver/ressources/ether.png"
-image_tube  = "MacGyver/ressources/tube.png"
-image_needle = "MacGyver/ressources/needle.png"
-image_wall = "MacGyver/ressources/wall40.png"
-image_macgyver ="MacGyver/ressources/mac_gyver.png"
-image_floor = "MacGyver/ressources/floor.png"
-image_win = "MacGyver/ressources/victory.png"
-image_lose = "MacGyver/ressources/defeat.png"
+IMAGE_BACKGROUND = "ressources/background.png"
+IMAGE_BADGUY = "ressources/guardian.png"
+IMAGE_ETHER = "ressources/ether.png"
+IMAGE_TUBE = "ressources/tube.png"
+IMAGE_NEEDLE = "ressources/needle.png"
+IMAGE_WALL = "ressources/wall40.png"
+IMAGE_MACGYVER = "ressources/mac_gyver.png"
+IMAGE_FLOOR = "ressources/floor.png"
+IMAGE_WIN = "ressources/victory.png"
+IMAGE_LOSE = "ressources/defeat.png"
