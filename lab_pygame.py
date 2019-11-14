@@ -76,6 +76,7 @@ def score_board():
 
 follow_the_game = 1
 display(game.structure)
+score_board()
 while follow_the_game:
 	for event in pygame.event.get():
 		if event.type == QUIT:

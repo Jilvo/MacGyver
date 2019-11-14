@@ -2,7 +2,7 @@
 Project 3 from the OpenClassrooms's school
 
 ## Comment faire marcher le programme?
-Voici les différentes instruction pour faire marcher le programme correctement.
+Voici les différentes instructions pour faire marcher le programme correctement.
 ### Installation 
 Vous devez installer le module pygame avec pip si vous êtes sur Windows:
 ```bash
@@ -19,31 +19,34 @@ sudo apt-get install -y \
 sudo pip3 install -q pygame
 ```
 ### Utilisation 
-Vous devez ensuite lancer le module _main.py_
-
-
+Vous devez ensuite lancer le fichier _main.py_
 
 ## Versionnage du projet:
 
-V0.1: début du projet et du labyrinthe
+V0.1: Début du projet et du labyrinthe.
 
-V0.2: écriture papier du projet
+V0.2: Ecriture papier du projet.
 
-V0.4: labyrinthe fini et fonctionnel
+V0.4: Labyrinthe fini et fonctionnel.
 
-V0.5: affichage du labyrinthe dans Pygame
+V0.5: Affichage du labyrinthe dans Pygame.
 
-V0.6: déplacement de macgyver sur Pygame et intération avec les objets
+V0.6: Déplacement de macgyver sur Pygame et intération avec les objets.
 
-V0.7: affichage du score
+V0.7: Affichage du score.
 
-V0.8: fermeture du programme en cas de défaite et de victoire
+V0.8: Fermeture du programme en cas de défaite et de victoire.
 
-V0.9 : separation en module
+V0.9 : Séparation en module.
 
-V1.0 : Version lors de ma soutenance
+V1.0 : Version lors de ma soutenance.
 
-V1.1 : Modification apres la soutenance "pylint","changer le fichier d'ouverture de lab_pygame.py pour main.py" et "faire une boucle while pour les objets"
+V1.1 :
+- Modification apres la soutenance du respect de mon projet pour la Pep8, "pylint"
+- Changer le fichier d'ouverture de lab_pygame.py pour main.py
+- Faire une boucle while pour le positionnement des objets,car il y avait parfois des problèmes pour poser les 3.
+- le score qui s'affiche dès le début de la partie et non plus quand on marche sur le première objet.
+- Compléter le READ.ME
 
 ## Auteur et Contribution:
 
