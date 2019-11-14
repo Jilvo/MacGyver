@@ -1,4 +1,4 @@
-"""V1.0--This Module set the constants """
+"""V1.1--This Module set the constants """
 #set the window
 NUMBER_SPRITE_COTE = 15
 SIZE_SPRITE = 40
