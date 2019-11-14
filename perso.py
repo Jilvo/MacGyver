@@ -1,7 +1,7 @@
-"""Import maze and score """
-from maze_charging import Labyrinth
+"""V1.1--This Module is in charge of moving MacGyver and tell if we pick an object
+-Import maze and score """
 from score import Score
-"""V1.1--This Module is in charge of moving MacGyver and tell if we pick an object """
+
 class Perso():
     """Class for the deplacement of the player and tell to class score to increm the score """
     def __init__(self, pos_x, pos_y, structure_lab, list_macgyver):

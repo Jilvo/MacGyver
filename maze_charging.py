@@ -1,7 +1,7 @@
-"""Import the ramdom module for put the object in the maze"""
+"""V1.1--This Module is in charge of charging the labyrinth by
+-reading the .txt ,find the player and set the objects
+-Import the ramdom module for put the object in the maze"""
 from random import randint
-"""V1.1--This Module is in charge of charging the labyrinth by"""
-"""reading the .txt ,find the player and set the objects """
 class Labyrinth():
     """create a class for the labyrinth"""
     def __init__(self, file):
