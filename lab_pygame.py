@@ -72,7 +72,7 @@ def score_board(macgyver_perso):
     screen.blit(wall, (280, 0))
     screen.blit(score_display, (0, 0))
     pygame.display.flip()
-def run(game,macgyver_perso):
+def run(game, macgyver_perso):
     follow_the_game = 1
     display(game.structure)
     score_board(macgyver_perso)

@@ -20,6 +20,8 @@ sudo pip3 install -q pygame
 ```
 ### Utilisation 
 Vous devez ensuite lancer le fichier _main.py_
+### Environnement virtuel
+Les librairies necessaires sont trouvables dans le fichier requirements.txt
 
 ## Versionnage du projet:
 
